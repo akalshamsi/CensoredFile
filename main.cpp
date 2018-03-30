@@ -1,4 +1,4 @@
-//Author:
+//Author: Abdul Alshamsi
 #include <iostream>
 #include <fstream>
 
@@ -13,8 +13,27 @@ int main()
   //lower case) should be assigned to first and the last letter (again in
   //either case) from the file to the variable last
 
+  if(in.is_open())
+    {
+        in>>first;
 
+    }
+    while(!in.eof())
+    {
+                in>>current;
 
+    if((current>='A' && current<='Z') || (current>='a' && current<='z'))
+            {
+                  if (first==' ')
+                     {
+                       first=current;
+                     }else
+                         {
+                          last=current;
+                         }
+             }
+}
+in.close();
   //Then, finally, this displays the censored version:
   cout<<first<<"**"<<last<<endl;
 
